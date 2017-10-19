@@ -11,12 +11,19 @@ export default {
         }
     },
 
+    data() {
+        return {
+            listHorizontal: false,
+            listVertical: false
+        };
+    },
+
     computed: {
         contactStyles() {
             return {
                 list: {
-                    'contact__list--horizontal': this.horizontal,
-                    'contact__list--vertical': this.vertical
+                    'contact__list--horizontal': this.listHorizontal,
+                    'contact__list--vertical': this.listVertical
                 }
             };
         }
@@ -24,7 +31,9 @@ export default {
 
     mounted() {
         if (this.horizontal) {
-            this.vertical = false;
+            this.listHorizontal = true;
+        } else {
+            this.listVertical = true;
         }
     }
 };
