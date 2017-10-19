@@ -1,0 +1,32 @@
+.contact {
+  &__list {
+    $self: &;
+    margin-bottom: 2rem;
+
+    &--horizontal {
+      padding-top: 0.5rem;
+
+      #{$self}-item {
+        float: left;
+      }
+
+      #{$self}-item + #{$self}-item {
+        padding-left: 0.5rem;
+      }
+    }
+
+    &--vertical {
+      #{$self}-item + #{$self}-item {
+        padding-bottom: 0.25rem;
+      }
+    }
+
+    &-item {
+      @extend .text-center;
+    }
+
+    &-content {
+      color: white;
+    }
+  }
+}
