@@ -1,10 +1,8 @@
 <template>
     <div class="row justify-content-center">
-        <div class="col-11">
+        <div class="col-11 col-md-10 col-lg-9 col-xl-8">
             <article class="about">
-                <div class="alert alert-danger" v-if="hasErrors">{{ errorMessage }}</div>
-
-                <home-title>Sobre mim</home-title>
+                <home-title :class="'about__title'">Sobre mim</home-title>
 
                 <section class="about__text" v-html="text"></section>
             </article>
@@ -25,18 +23,8 @@
 
         data() {
             return {
-                text: '',
-                errorMessage: 'Houve um erro ao recuperar os dados.',
-                hasErrors: false
+                text: aboutMe.text
             };
-        },
-
-        mounted() {
-            this.text = aboutMe.text;
-
-            if (!this.text) {
-                this.hasErrors = true;
-            }
         }
     }
 </script>
@@ -45,9 +33,18 @@
     .about {
       background-color: white;
 
+      &__title {
+        width: 40% !important;
+        margin-left: 5%;
+      }
+
       &__text {
         padding: 0.5rem;
         @extend .text-justify;
+        @include media-breakpoint-up(md) {
+          padding-right: 20%;
+          padding-left: 20%;
+        }
       }
     }
 </style>
