@@ -4,6 +4,8 @@
 
       <app-home></app-home>
 
+      <app-projects></app-projects>
+
       <app-footer></app-footer>
   </div>
 </template>
@@ -13,6 +15,7 @@
     import AppFooter from './components/App/AppFooter';
 
     import AppHome from '@/components/Home/AppHome';
+    import AppProjects from '@/components/Projects/AppProjects';
 
     export default {
       name: 'app',
@@ -20,7 +23,8 @@
       components: {
           AppHeader,
           AppFooter,
-          AppHome
+          AppHome,
+          AppProjects
       }
     }
 </script>

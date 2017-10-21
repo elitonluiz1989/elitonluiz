@@ -1,7 +1,7 @@
 <template>
     <div class="header container-fluid">
         <div class="row justify-content-center">
-            <nav class="header__nav navbar navbar-light navbar-expand-sm bg-faded w-100 col-md-11 col-lg-10 col-xl-9">
+            <nav class="header__nav navbar navbar-expand-sm bg-faded w-100 col-md-11 col-lg-10 col-xl-9">
                 <a class="navbar-brand" href="#">{{ title }}<br><small class="header__subtitle">Programador PHP</small></a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,6 @@
                     {
                         url: '#inicio',
                         title: 'Início'
-                    },
-                    {
-                        url: '#skills',
-                        title: 'Skills'
                     },
                     {
                         url: '#projetos',
@@ -84,14 +80,7 @@
       }
 
       a {
-        margin-top: 0.4rem;
         @extend .text-white;
-
-        &:hover {
-          background-color: white;
-          border-radius: .5rem;
-          color: $header-bg-color;
-        }
       }
 
       .navbar-brand {
@@ -102,8 +91,18 @@
         background-color: rgba(0, 0, 0, .4);
         @extend .text-center;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(sm) {
           background-color: transparent;
+
+          a{
+            width: 7rem;
+
+            &:hover {
+              background-color: #333;
+              border-radius: .5rem;
+              color: $header-bg-color !important;
+            }
+          }
         }
       }
     }

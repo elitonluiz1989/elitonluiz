@@ -2,7 +2,7 @@
     <main class="home container-fluid">
         <div class="row justify-content-center">
             <div class="home__content col-12 col-sm-9">
-                <p>Desenvolvo sites totalmente responsíveis. Utilizando de tecnologias como:</p>
+                <p>Desenvolvo sites responsíveis, utilizando de tecnologias atuais como:</p>
                 <p><span class="badge" v-for="skill in skills">{{ skill }}</span></p>
             </div>
         </div>
