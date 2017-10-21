@@ -1,50 +1,56 @@
 <template>
-    <div class="row justify-content-center">
-        <div class="col-11 col-md-10 col-lg-9 col-xl-8">
-            <article class="about">
-                <home-title :class="'about__title'">Sobre mim</home-title>
-
-                <section class="about__text" v-html="text"></section>
-            </article>
+    <main class="home container-fluid">
+        <div class="row justify-content-center">
+            <div class="home__content col-12 col-sm-9">
+                <p>Desenvolvo sites totalmente responsíveis. Utilizando de tecnologias como:</p>
+                <p><span class="badge" v-for="skill in skills">{{ skill }}</span></p>
+            </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
-    import HomeTitle from '@/components/Base/AppTitle';
-    import aboutMe from './data/about.json';
+    import Skills from './data/skills';
 
     export default {
-        name: 'app-home',
-
-        components: {
-            HomeTitle
-        },
+        name: "app-home",
 
         data() {
             return {
-                text: aboutMe.text
+                skills: Skills
             };
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .about {
+  .home {
+    $home-margin: 1rem;
+    background-color: $header-bg-color;
+
+    &__separator {
       background-color: white;
+      height: 1px;
+      margin-top: $home-margin;
+    }
 
-      &__title {
-        width: 40% !important;
-        margin-left: 5%;
-      }
+        &__content {
+          margin: $home-margin 0;
+          @extend .text-white;
 
-      &__text {
-        padding: 0.5rem;
-        @extend .text-justify;
-        @include media-breakpoint-up(md) {
-          padding-right: 20%;
-          padding-left: 20%;
+          p {
+            @extend .text-center;
+          }
+
+          .badge {
+            background-color: white;
+            padding: 0.3rem;
+            color: $header-bg-color;
+          }
+
+          .badge + .badge {
+            margin-left: 0.5rem;
+          }
         }
-      }
     }
 </style>

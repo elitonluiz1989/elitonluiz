@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="footer__separator col-12 d-sm-none">. . .</div>
+            <div class="footer__separator col-12 d-md-none">. . .</div>
 
             <contact-send-email :class="'col-12 col-sm-8 col-md col-xl-5'"></contact-send-email>
         </div>

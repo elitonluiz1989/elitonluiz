@@ -16,9 +16,8 @@
 
 <style lang="scss" scoped>
     .title {
-      background-color: #333;
+      background-color: #ba2323;
       margin-bottom: 0.5rem;
-      width: 70%;
 
       h1 {
         padding: 0.5rem;

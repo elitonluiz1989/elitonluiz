@@ -2,7 +2,7 @@
   <div id="app">
       <app-header></app-header>
 
-      <app-content></app-content>
+      <app-home></app-home>
 
       <app-footer></app-footer>
   </div>
@@ -10,16 +10,17 @@
 
 <script>
     import AppHeader from './components/App/AppHeader';
-    import AppContent from './components/App/AppContent';
     import AppFooter from './components/App/AppFooter';
+
+    import AppHome from '@/components/Home/AppHome';
 
     export default {
       name: 'app',
 
       components: {
           AppHeader,
-          AppContent,
-          AppFooter
+          AppFooter,
+          AppHome
       }
     }
 </script>

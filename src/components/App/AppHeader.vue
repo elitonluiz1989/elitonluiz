@@ -1,16 +1,20 @@
 <template>
     <div class="header container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <h1 class="header__title">{{ title }}</h1>
-            </div>
+        <div class="row justify-content-center">
+            <nav class="header__nav navbar navbar-light navbar-expand-sm bg-faded w-100 col-md-11 col-lg-10 col-xl-9">
+                <a class="navbar-brand" href="#">{{ title }}<br><small class="header__subtitle">Programador PHP</small></a>
 
-            <nav class="col-12 col-md-6">
-                <ul class="header__nav nav nav-fill">
-                    <li class="nav-item" v-for="item in mainNav">
-                        <a class="nav-link" :href="item.url" v-text="item.title"></a>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="header-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" v-for="item in mainNav">
+                            <a class="nav-link" :href="item.url">{{ item.title }}</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </div>
@@ -48,24 +52,60 @@
 </script>
 
 <style lang="scss" scoped>
-    .header {
-        $header-nav-color: $main-bg-color;
-        background-color: $header-nav-color;
+  .header {
+    background-color: $header-bg-color;
 
-        &__title {
-            color: white;
-            @extend .text-center;
-        }
+    &__title {
+      @extend .text-white;
 
-        &__nav a {
-            margin-top: 0.4rem;
-            color: white;
-
-            &:hover {
-                background-color: white;
-                border-radius: .5rem;
-                color: $header-nav-color;
-            }
-        }
+      @include media-breakpoint-only(sm) {
+        margin-left: 10%;
+      }
     }
+
+    &__subtitle {
+      color: #111;
+      margin-left: 30%;
+
+      @include media-breakpoint-up(sm) {
+        margin-left: 30%;
+      }
+    }
+
+    &__nav {
+      $navbar-margin: 1rem;
+      padding-right: 0;
+      padding-left: 0;
+
+      button {
+        border-color: white !important;
+        margin-right: $navbar-margin;
+        @extend .text-white;
+      }
+
+      a {
+        margin-top: 0.4rem;
+        @extend .text-white;
+
+        &:hover {
+          background-color: white;
+          border-radius: .5rem;
+          color: $header-bg-color;
+        }
+      }
+
+      .navbar-brand {
+        margin-left: $navbar-margin;
+      }
+
+      .navbar-nav  {
+        background-color: rgba(0, 0, 0, .4);
+        @extend .text-center;
+
+        @include media-breakpoint-up(md) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
 </style>
