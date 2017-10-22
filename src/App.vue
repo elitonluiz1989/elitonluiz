@@ -6,6 +6,8 @@
 
       <app-projects></app-projects>
 
+      <app-about></app-about>
+
       <app-footer></app-footer>
   </div>
 </template>
@@ -16,6 +18,7 @@
 
     import AppHome from '@/components/Home/AppHome';
     import AppProjects from '@/components/Projects/AppProjects';
+    import AppAbout from '@/components/About/AppAbout';
 
     export default {
       name: 'app',
@@ -24,7 +27,8 @@
           AppHeader,
           AppFooter,
           AppHome,
-          AppProjects
+          AppProjects,
+          AppAbout
       }
     }
 </script>

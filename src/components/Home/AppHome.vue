@@ -25,32 +25,33 @@
 
 <style lang="scss" scoped>
   .home {
-    $home-margin: 1rem;
+    $home-padding: 3rem;
     background-color: $header-bg-color;
+    padding-top: $home-padding;
+    padding-bottom: $home-padding;
 
-    &__separator {
-      background-color: white;
-      height: 1px;
-      margin-top: $home-margin;
+    @include media-breakpoint-up(lg) {
+      $home-lg-padding: 5rem;
+      padding-top: $home-lg-padding;
+      padding-bottom: $home-lg-padding;
     }
 
-        &__content {
-          margin: $home-margin 0;
-          @extend .text-white;
+    &__content {
+      @extend .text-white;
 
-          p {
-            @extend .text-center;
-          }
+      p {
+        @extend .text-center;
+      }
 
-          .badge {
-            background-color: white;
-            padding: 0.3rem;
-            color: $header-bg-color;
-          }
+      .badge {
+        background-color: white;
+        padding: 0.3rem;
+        color: $header-bg-color;
+      }
 
-          .badge + .badge {
-            margin-left: 0.5rem;
-          }
-        }
+      .badge + .badge {
+        margin-left: 0.5rem;
+      }
     }
+  }
 </style>

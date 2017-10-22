@@ -34,6 +34,10 @@
     .projects {
       background-color: #fcfcfc;
 
+      @include media-breakpoint-up(sm) {
+        padding-bottom: 5rem;
+      }
+
       &__header {
         background-color: white;
         padding: 1rem 0 1rem 2rem;
