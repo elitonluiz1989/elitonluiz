@@ -1,8 +1,12 @@
 <template>
-    <div class="header container-fluid">
+    <div class="header container-fluid fixed-top">
         <div class="row justify-content-center">
-            <nav class="header__nav navbar navbar-expand-sm bg-faded w-100 col-md-11 col-lg-10 col-xl-9">
-                <a class="navbar-brand" href="#">{{ title }}<br><small class="header__subtitle">Programador PHP</small></a>
+            <nav class="header__nav navbar navbar-expand-md bg-faded w-100 col-md-12 col-lg-10 col-xl-9">
+                <a class="navbar-brand" href="#">
+                    <img class="header__logo" src="../../assets/img/logo.png">
+                    <span>{{ title }}</span>
+                    <span class="header__subtitle">Programador PHP</span>
+                </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars" aria-hidden="true"></i>
@@ -11,7 +15,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="header-nav">
                     <ul class="navbar-nav">
                         <li class="nav-item" v-for="item in mainNav">
-                            <a class="nav-link" :href="item.url">{{ item.title }}</a>
+                            <a class="nav-link" :href="item.url" @click="jumpToItem">{{ item.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -37,12 +41,34 @@
                         title: 'Projetos'
                     },
                     {
+                        url: '#sobre',
+                        title: 'Sobre'
+                    },
+                    {
                         url: '#contato',
                         title: 'Contato'
                     }
                 ],
                 title: 'Eliton Luiz'
             };
+        },
+
+        methods: {
+           jumpToItem(evt) {
+               evt.preventDefault();
+
+               let href = evt.target.href;
+               let item = href.substr(href.indexOf('#'), href.length);
+               let scrollTo = $(item).offset().top;
+               scrollTo -= $(evt.target).closest('.header').height();
+
+               let newUrl = window.location.href;
+               newUrl = newUrl.split('#')[0];
+               newUrl += item;
+               window.history.pushState(null, null, newUrl);
+
+               $('html, body').animate({scrollTop: scrollTo}, 500);
+           }
         }
     }
 </script>
@@ -51,20 +77,19 @@
   .header {
     background-color: $header-bg-color;
 
-    &__title {
-      @extend .text-white;
-
-      @include media-breakpoint-only(sm) {
-        margin-left: 10%;
-      }
+    &__logo {
+      width: 25px;
+      height: 25px;
+      margin-top: -5px;
     }
 
     &__subtitle {
+      margin-left: 0.45rem;
       color: #111;
-      margin-left: 30%;
+      font-size: 0.6em;
 
       @include media-breakpoint-up(sm) {
-        margin-left: 30%;
+        font-size: 0.8rem;
       }
     }
 
@@ -91,7 +116,7 @@
         background-color: rgba(0, 0, 0, .4);
         @extend .text-center;
 
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
           background-color: transparent;
 
           a{

@@ -2,13 +2,13 @@
   <div id="app">
       <app-header></app-header>
 
-      <app-home></app-home>
+      <app-home :id="'inicio'"></app-home>
 
-      <app-projects></app-projects>
+      <app-projects :id="'projetos'"></app-projects>
 
-      <app-about></app-about>
+      <app-about :id="'sobre'"></app-about>
 
-      <app-footer></app-footer>
+      <app-footer :id="'contato'"></app-footer>
   </div>
 </template>
 

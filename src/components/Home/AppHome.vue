@@ -25,9 +25,9 @@
 
 <style lang="scss" scoped>
   .home {
-    $home-padding: 3rem;
+    $home-padding: 5rem;
     background-color: $header-bg-color;
-    padding-top: $home-padding;
+    padding-top: $home-padding + 2rem;
     padding-bottom: $home-padding;
 
     @include media-breakpoint-up(lg) {
