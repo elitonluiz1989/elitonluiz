@@ -11,15 +11,10 @@
 </template>
 
 <script>
-    import HomeTitle from '@/components/Base/AppTitle';
     import aboutMe from './data/about.json';
 
     export default {
         name: 'app-about',
-
-        components: {
-            HomeTitle
-        },
 
         data() {
             return {
