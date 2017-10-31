@@ -1,5 +1,5 @@
 <template>
-    <div class="header container-fluid fixed-top">
+    <div id="header" class="header container-fluid fixed-top">
         <div class="row justify-content-center">
             <nav class="header__nav navbar navbar-expand-md bg-faded w-100 col-md-12 col-lg-10 col-xl-9">
                 <a class="navbar-brand" href="#">
@@ -15,7 +15,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="header-nav">
                     <ul class="navbar-nav">
                         <li class="nav-item" v-for="item in mainNav">
-                            <a class="nav-link" :href="item.url" @click="jumpToItem">{{ item.title }}</a>
+                            <a class="nav-link" :href="baseUrl + item.url" @click="jumpToItem">{{ item.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -26,26 +26,29 @@
 </template>
 
 <script>
+    import sessionScroll from "../../assets/js/sessionScroll";
+
     export default {
         name: 'app-header',
 
         data() {
             return {
+                baseUrl: window.location.origin + '/',
                 mainNav: [
                     {
-                        url: '#inicio',
+                        url: 'inicio',
                         title: 'Início'
                     },
                     {
-                        url: '#projetos',
+                        url: 'projetos',
                         title: 'Projetos'
                     },
                     {
-                        url: '#sobre',
+                        url: 'sobre',
                         title: 'Sobre'
                     },
                     {
-                        url: '#contato',
+                        url: 'contato',
                         title: 'Contato'
                     }
                 ],
@@ -57,17 +60,10 @@
            jumpToItem(evt) {
                evt.preventDefault();
 
-               let href = evt.target.href;
-               let item = href.substr(href.indexOf('#'), href.length);
-               let scrollTo = $(item).offset().top;
-               scrollTo -= $(evt.target).closest('.header').height();
+               let origin = window.location.origin + '/';
+               let session = evt.target.href.replace(origin, '');
 
-               let newUrl = window.location.href;
-               newUrl = newUrl.split('#')[0];
-               newUrl += item;
-               window.history.pushState(null, null, newUrl);
-
-               $('html, body').animate({scrollTop: scrollTo}, 500);
+               sessionScroll(session);
            }
         }
     }

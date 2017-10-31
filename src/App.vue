@@ -13,6 +13,8 @@
 </template>
 
 <script>
+    import sessionScroll from "./assets/js/sessionScroll";
+
     import AppHeader from './components/App/AppHeader';
     import AppFooter from './components/App/AppFooter';
 
@@ -29,6 +31,14 @@
           AppHome,
           AppProjects,
           AppAbout
+      },
+
+      mounted() {
+          if(window.location.href !== window.location.origin) {
+              let session = window.location.href.replace(window.location.origin + '/', '');
+
+              sessionScroll(session);
+          }
       }
     }
 </script>
