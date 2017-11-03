@@ -1,5 +1,5 @@
 export default function sessionScroll (session) {
-    if (session.indexOf('/') === -1) {
+    if (session.indexOf('/') === -1 && session !== '') {
         let element = document.querySelector('#' + session);
 
         if (element) {

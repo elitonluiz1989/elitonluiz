@@ -35,9 +35,11 @@
 
       mounted() {
           if(window.location.href !== window.location.origin) {
-              let session = window.location.href.replace(window.location.origin + '/', '');
+              window.onload = () => {
+                  let session = window.location.href.replace(window.location.origin + '/', '');
 
-              sessionScroll(session);
+                  sessionScroll(session);
+              }
           }
       }
     }

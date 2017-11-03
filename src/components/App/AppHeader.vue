@@ -2,7 +2,7 @@
     <div id="header" class="header container-fluid fixed-top">
         <div class="row justify-content-center">
             <nav class="header__nav navbar navbar-expand-md bg-faded w-100 col-md-12 col-lg-10 col-xl-9">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img class="header__logo" src="../../../static/img/logo25x25.png">
                     <span>{{ title }}</span>
                     <span class="header__subtitle">Programador PHP</span>
