@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $response = $this->response->withJson('API working.');
-        return $response;
+        $return = 'API Working';
+        return $this->formattedReturn($return);
     }
 }

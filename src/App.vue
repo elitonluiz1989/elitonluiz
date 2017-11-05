@@ -41,6 +41,13 @@
                   sessionScroll(session);
               }
           }
+
+          this.$http.get('/api/')
+              .then(response => {
+                  console.log(response.body)
+              }, err => {
+                console.log(err)
+          })
       }
     }
 </script>

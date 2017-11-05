@@ -1,2 +1,3 @@
 <?php
-$app->get('/api/', 'Modules\Home\Controllers\HomeController:index');
+
+$app->get('/api/[{name}/]', 'Modules\Home\Controllers\HomeController:index');

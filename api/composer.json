@@ -8,6 +8,10 @@
         "psr-4": {
             "Src\\": "src/",
             "Modules\\": "modules/"
-        }
+        },
+
+        "files": [
+            "src/helpers.php"
+        ]
     }
 }
