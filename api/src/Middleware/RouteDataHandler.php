@@ -25,11 +25,12 @@ class RouteDataHandler
      */
     public function __invoke(Request $request, Response $response, callable $next)
     {
-        $routeArgs = $request->getAttribute('route')->getArguments();
+        $route = $request->getAttribute('route');
+        $routeArgs = ($route) ? $route->getArguments() : [];
         $requestParams = ($request->isGet()) ? $request->getParams() : $request->getParsedBody();
-        $routeArguments = array_merge($routeArgs, $requestParams);
+        $data = array_merge($routeArgs, $requestParams);
 
-        $this->container['routeArguments'] = $routeArguments;
+        $this->container['data'] = $data;
 
         $newResponse = $next($request, $response);
 

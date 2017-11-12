@@ -39,7 +39,7 @@ abstract class Controller
         $this->container = $container;
         $this->request = $container->get('request');
         $this->response = $container->get('response');
-        $this->data = $this->container->get('routeArguments');
+        $this->data = $this->container->get('data');
     }
 
     protected function formattedReturn($data) {
