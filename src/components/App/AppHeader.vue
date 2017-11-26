@@ -2,20 +2,20 @@
     <div id="header" class="header container-fluid fixed-top">
         <div class="row justify-content-center">
             <nav class="header__nav navbar navbar-expand-md bg-faded w-100 col-md-12 col-lg-10 col-xl-9">
-                <a class="navbar-brand" href="/">
+                <a class="navbar-brand text-white" href="/">
                     <img class="header__logo" src="../../../static/img/logo25x25.png">
                     <span>{{ title }}</span>
                     <span class="header__subtitle">Programador PHP</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="header-nav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav text-center">
                         <li class="nav-item" v-for="item in mainNav">
-                            <a class="nav-link" :href="baseUrl + item.url" @click="jumpToItem">{{ item.title }}</a>
+                            <a class="nav-link text-white" :href="baseUrl + item.url" @click="jumpToItem">{{ item.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
     }
 
     &__subtitle {
-      margin-left: 0.45rem;
+      margin-left: 0.4rem;
       color: #111;
       font-size: 0.6em;
 
@@ -97,11 +97,6 @@
       button {
         border-color: white !important;
         margin-right: $navbar-margin;
-        @extend .text-white;
-      }
-
-      a {
-        @extend .text-white;
       }
 
       .navbar-brand {
@@ -110,7 +105,6 @@
 
       .navbar-nav  {
         background-color: rgba(0, 0, 0, .4);
-        @extend .text-center;
 
         @include media-breakpoint-up(md) {
           background-color: transparent;

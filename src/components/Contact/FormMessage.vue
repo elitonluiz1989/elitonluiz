@@ -1,5 +1,5 @@
 <template>
-    <div class="form-message" :class="formMessageStyles.wrapper">
+    <div class="form-message text-center" :class="formMessageStyles.wrapper">
         <div class="alert" :class="formMessageStyles.message" v-text="message"></div>
     </div>
 </template>
@@ -46,7 +46,6 @@
     .form-message{
         opacity: 0;
         transition: opacity 1s;
-        @extend .text-center;
 
         &--show {
             opacity: 1;

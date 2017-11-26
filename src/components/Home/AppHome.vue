@@ -1,9 +1,9 @@
 <template>
     <main class="home container-fluid">
         <div class="row justify-content-center">
-            <div class="home__content col-12 col-sm-9">
-                <p>Desenvolvo sites responsíveis, utilizando de tecnologias atuais como:</p>
-                <p><span class="badge" v-for="skill in skills">{{ skill }}</span></p>
+            <div class="text-white col-12 col-sm-9">
+                <p class="text-center">Desenvolvo sites responsíveis, utilizando de tecnologias atuais como:</p>
+                <p class="text-center"><span class="badge" v-for="skill in skills">{{ skill }}</span></p>
             </div>
         </div>
     </main>
@@ -36,22 +36,14 @@
       padding-bottom: $home-lg-padding;
     }
 
-    &__content {
-      @extend .text-white;
+    .badge {
+      background-color: white;
+      padding: 0.3rem;
+      color: $header-bg-color;
+    }
 
-      p {
-        @extend .text-center;
-      }
-
-      .badge {
-        background-color: white;
-        padding: 0.3rem;
-        color: $header-bg-color;
-      }
-
-      .badge + .badge {
-        margin-left: 0.5rem;
-      }
+    .badge + .badge {
+      margin-left: 0.5rem;
     }
   }
 </style>

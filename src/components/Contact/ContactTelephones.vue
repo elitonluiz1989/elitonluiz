@@ -1,19 +1,19 @@
 <template>
     <div class="col">
         <ul class="contact__list list-unstyled justify-content-end" :class="contactStyles.list">
-            <li class="contact__list-item" v-if="vertical">
-                <span class="contact__list-content">
+            <li class="text-center" v-if="vertical">
+                <span class="text-white">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </span>
             </li>
 
-            <li class="contact__list-item" v-for="phone in telephones">
-                <a class="contact__list-content" :href="whatsappUrl + phone.number" v-if="phone.whatsapp">
+            <li class="text-center" v-for="phone in telephones">
+                <a class="text-white" :href="whatsappUrl + phone.number" v-if="phone.whatsapp">
                     <i class="fa fa-whatsapp" aria-hidden="true" v-if="phone.whatsapp"></i>
                     {{ phone.number | phoneFormat }}
                 </a>
 
-                <span class="contact__list-content" v-if="!phone.whatsapp">
+                <span class="text-white" v-if="!phone.whatsapp">
                     <i class="fa fa-phone" aria-hidden="true" v-if="!phone.whatsapp && horizontal"></i>
                     {{ phone.number | phoneFormat }}
                 </span>

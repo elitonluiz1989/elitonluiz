@@ -1,11 +1,11 @@
 <template>
-    <div class="about container-fluid">
+    <div class="about container-fluid text-white">
         <article class="row justify-content-center">
-            <header class="about__title col-11 col-sm-2">
+            <header class="about__title col-11 col-sm-2 text-center">
                 <h3>Sobre mim</h3>
             </header>
 
-            <section class="about__text col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5" v-html="text"></section>
+            <section class="about__text col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-justify" v-html="text"></section>
         </article>
     </div>
 </template>
@@ -30,7 +30,6 @@
     background-color: $about-color;
     padding-top: 1rem;
     padding-bottom: 3rem;
-    @extend .text-white;
 
     @include media-breakpoint-up(lg) {
       padding-top: 2rem;
@@ -41,7 +40,6 @@
       background-color: white;
       padding: 0.5rem 0;
       color: $about-color;
-      @extend .text-center;
 
       @include media-breakpoint-up(sm) {
         height: 8rem;
@@ -56,7 +54,6 @@
 
     &__text {
       padding: 1rem;
-      @extend .text-justify;
     }
   }
 </style>

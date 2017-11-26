@@ -1,14 +1,14 @@
 <template>
     <div class="col">
         <ul class="contact__list list-unstyled" :class="contactStyles.list">
-            <li class="contact__list-item">
-                <span class="contact__list-content">
+            <li class="text-center">
+                <span class="text-white">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                 </span>
             </li>
 
-            <li class="contact__list-item" v-for="email in emails">
-                <span class="contact__list-content">{{ email.address }}</span>
+            <li class="text-center" v-for="email in emails">
+                <span class="text-white">{{ email.address }}</span>
             </li>
         </ul>
     </div>

@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="footer__separator col-12 d-md-none">. . .</div>
+            <div class="footer__separator font-weight-bold text-center text-white col-12 d-md-none">. . .</div>
 
             <contact-send-email :class="'col-12 col-sm-8 col-md col-xl-5'"></contact-send-email>
         </div>
@@ -43,9 +43,6 @@
 
         &__separator {
           padding: 0.5rem 0;
-          color: white;
-          @extend .font-weight-bold;
-          @extend .text-center;
           word-spacing: 0.5rem;
         }
     }

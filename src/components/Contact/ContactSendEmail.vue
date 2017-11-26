@@ -1,6 +1,6 @@
 <template>
     <div class="col">
-        <form class="send-email container" :action="formAction" @submit.prevent="sendEmail" ref="form">
+        <form class="send-email container text-white" :action="formAction" @submit.prevent="sendEmail" ref="form">
             <h2>Envie uma mensagem</h2>
 
             <form-message :message="formMessageText" :show="showFormMessage" :error="hasMessageError"></form-message>
@@ -53,9 +53,9 @@
             return {
                 emails: Emails,
                 formAction: '/api/mail/send',
-                name: 'Eliton Luiz',
-                email: 'elitonluiz1989@outook.com',
-                message: 'Isso é um teste',
+                name: '',
+                email: '',
+                message: '',
                 showFormMessage: false,
                 hasMessageError: false,
                 formMessageText: '',
@@ -154,28 +154,29 @@
 </script>
 
 <style lang="scss" scoped>
-    .send-email {
-        color: white;
-        margin-top: 2rem;
-        padding: 0.5rem;
-        @include media-breakpoint-up(md) {
-            margin-top: 0;
-        }
+  .send-email {
+    margin-top: 2rem;
+    padding: 0.5rem;
 
-        h2 {
-            font-size: 1.4rem;
-          @include media-breakpoint-up(lg) {
-            margin-bottom: 2rem;
-          }
-        }
-
-        textarea {
-            min-height: 10rem;
-            margin-top: 1rem;
-        }
-
-        .btn + .btn {
-            margin-left: 1rem;
-        }
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
     }
+
+    h2 {
+      font-size: 1.4rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    textarea {
+      min-height: 10rem;
+      margin-top: 1rem;
+    }
+
+    .btn + .btn {
+      margin-left: 1rem;
+    }
+  }
 </style>
